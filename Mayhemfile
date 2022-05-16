@@ -1,0 +1,8 @@
+project: sudachi-rs
+target: sudachi-rs
+
+image: ghcr.io/ebell495/sudachi.rs:latest
+duration: 300
+
+cmds:
+    - cmd: ./sudachi.rs/target/debug/sudachi @@
