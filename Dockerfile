@@ -3,7 +3,7 @@ COPY . /sudachi.rs/
 WORKDIR /sudachi.rs/sudachi-cli
 RUN cargo build
 WORKDIR /sudachi.rs
-RUN ./fetch_dictionary.sh
+RUN tr -d '\015' < fetch_dictionary.sh > fetch_dictionary.sh && chmod +x fetch_dictionary.sh && ./fetch_dictionary.sh
 
 FROM debian:bullseye-slim
 COPY --from=builder /sudachi.rs /sudachi.rs
